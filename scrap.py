@@ -111,37 +111,37 @@ def extraer_datos_de_enlace(enlace):
                 numero = int(numeros_encontrados[0].strip())
 
             if key == 'Sup. cubierta':
-                features['Sup. cubierta [m²]'] = numero if numero else value
+                features['Sup. cubierta [m²]'] = int(numero) if numero else value
             elif key == 'Sup. total':
-                features['Sup. total [m²]'] = numero if numero else value
+                features['Sup. total [m²]'] = int(numero) if numero else value
             elif key == 'Sup. descubierta':
-                features['Sup. descubierta [m²]'] = numero if numero else value
+                features['Sup. descubierta [m²]'] = int(numero) if numero else value
             elif key == 'Sup. terreno':
-                features['Sup. terreno [m²]'] = numero if numero else value
+                features['Sup. terreno [m²]'] = int(numero) if numero else value
             elif key == 'Baños':
-                features['Baños'] = numero if numero else value
+                features['Baños'] = int(numero) if numero else value
             elif key == 'Dormitorios':
-                features['Dormitorios'] = numero if numero else value
+                features['Dormitorios'] = int(numero) if numero else value
 
             elif key == 'Cocheras':
-                features['Cocheras'] = numero if numero else value
+                features['Cocheras'] = int(numero) if numero else value
             elif key == 'Toilettes':
-                features['Toilettes'] = numero if numero else value
+                features['Toilettes'] = int(numero) if numero else value
             elif key == 'Antiguedad':
                 if value == 'A Estrenar':
                     features['Antiguedad [años]'] = 0
                 else:
-                    features['Antiguedad [años]'] = numero if numero else value
+                    features['Antiguedad [años]'] = int(numero) if numero else value
             elif key == 'Antigüedad':
                 if value == 'A estrenar':
                     features['Antigüedad [años]'] = 0
                 else:
-                    features['Antigüedad [años]'] = numero if numero else value
+                    features['Antigüedad [años]'] = int(numero) if numero else value
             elif key == 'Ambientes':
                 if value == 'Monoambiente':
                     features['Ambientes'] = 0
                 else:
-                    features['Ambientes'] = numero if numero else value
+                    features['Ambientes'] = int(numero) if numero else value
             elif key == 'Permite mascota':
                 if value == 'Per. mascota':
                     features['Permite mascota'] = 'Si'
@@ -201,3 +201,4 @@ if __name__ == "__main__":
     tiempo_fin = time.time()
     duracion_segundos = tiempo_fin - tiempo_inicio
     print(f"\nTiempo total de ejecución: {duracion_segundos} segundos")
+    print(f"\nTiempo total de ejecución: {duracion_segundos / 60} minutos")
